@@ -17,10 +17,11 @@ class Course(models.Model):
     lastdate = models.DateField(help_text="Введите дату последнего занятия")
     price = models.IntegerField(help_text="Введите стоимость курса")
     info = models.TextField(help_text="Введите подробную информацию про курс")
+    direction = models.ForeignKey("Direction", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('course-detail', args=[str(self.name)])
+        return reverse('course_detail', args=[str(self.id)])
 
