@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Образование НИУ "МЭИ"</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/admin/">Администратор</a>
+        </div>
+        <div class="title">
+            <h3>{{ course.name }}</h3>
+        </div>
+        <div class="info">
+            <p>Число занятий: {{ course.num }}</p>
+            <p>Время одного занятия: {{ course.time }} минут</p>
+            <p>Дни проведения занятий: {{ course.days }}</p>
+            <p>Даты проведения занятий: с {{ course.firstdate }} по {{ course.lastdate }}</p>
+            <p>Стоимость курса: {{ course.price }} рублей</p>
+            <p>Информация: {{ course.info }}</p>
+        </div>
+    </div>
+</body>
+</html>

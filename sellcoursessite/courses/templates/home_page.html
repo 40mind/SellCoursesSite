@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Образование НИУ "МЭИ"</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/admin/">Администратор</a>
+        </div>
+        <div class="search">
+            <form>
+                Введите запрос
+                <input type="text">
+            </form>
+        </div>
+        <div class="directions">
+            <h3>Количество направлений: {{num_directions}}</h3>
+            {% if direction_list %}
+            <form>
+                <select name="selectdir">
+                    {% for direction in direction_list %}
+                    <option>{{ direction.name }}</option>
+                    {% endfor %}
+                </select>
+                <button>Выбрать</button>
+            </form>
+            {% else %}
+                <p>Нет записей о направлениях</p>
+            {% endif %}
+        </div>
+        <div class="courses">
+            <h3>Список курсов</h3>
+            {% if course_list %}
+            <ul>
+                {% for course in course_list %}
+                <li>
+                    <p>{{ course.name }}, Кол-во занятий: {{course.num}}, с {{course.firstdate}} по {{course.lastdate}}</p>
+                    <form>
+                        <button>Записаться</button>
+                    </form>
+                    <form action="{{ course.get_absolute_url}}">
+                        <button>Подробнее</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <p>Нет записей о курсах</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
