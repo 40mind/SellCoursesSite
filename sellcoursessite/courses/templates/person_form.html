@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Образование НИУ "МЭИ"</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="record">
+            <form action="" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr><td>Курс</td> <td>{{ form.course }}</td></tr>
+                    <tr><td>Имя</td> <td>{{ form.name }}</td></tr>
+                    <tr><td>Фамилия</td> <td>{{ form.surname }}</td></tr>
+                    <tr><td>Отчество</td> <td>{{ form.fathername }}</td></tr>
+                    <tr><td>Email</td> <td>{{ form.email }}</td></tr>
+                    <tr><td>Телефон</td> <td>{{ form.phone }}</td></tr>
+                    <tr><td>Комментарий</td> <td>{{ form.comment }}</td></tr>
+                </table>
+
+                <input type="submit" value="Отправить" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

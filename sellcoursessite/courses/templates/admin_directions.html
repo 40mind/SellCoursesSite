@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Направления</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="dir">
+            {% if direction_list %}
+            <ol>
+                {% for direction in direction_list %}
+                <li>{{ direction.name }}</li>
+                {% endfor %}
+            </ol>
+            {% else %}
+            <p>Нет записей о направлениях</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

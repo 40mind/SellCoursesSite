@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="cour">
+            {% if course_list %}
+            <ol>
+                {% for course in course_list %}
+                <li>
+                    <p>{{ course.name }}, Кол-во занятий: {{course.num}}, с {{course.firstdate}} по {{course.lastdate}}</p>
+                    <form action="">
+                        <button>Изменить</button>
+                    </form>
+                    <form action="">
+                        <button>Удалить</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ol>
+            {% else %}
+                <p>Нет записей о курсах</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

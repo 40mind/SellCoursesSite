@@ -3,20 +3,20 @@ from django.urls import reverse
 
 # Create your models here.
 class Direction(models.Model):
-    name = models.CharField(max_length=30, help_text="Введите название направления")
+    name = models.CharField(max_length=30, help_text="Название направления")
 
     def __str__(self):
         return self.name
 
 class Course(models.Model):
-    name = models.CharField(max_length=30, help_text="Введите название курса")
-    num = models.IntegerField(help_text="Введите количество занятий")
-    time = models.IntegerField(help_text="Введите время одного занятия")
-    days = models.CharField(max_length=100, help_text="Введите дни недели когда будут проходить занятия (через запятую)")
-    firstdate = models.DateField(help_text="Введите дату первого занятия")
-    lastdate = models.DateField(help_text="Введите дату последнего занятия")
-    price = models.IntegerField(help_text="Введите стоимость курса")
-    info = models.TextField(help_text="Введите подробную информацию про курс")
+    name = models.CharField(max_length=30, help_text="Название курса")
+    num = models.IntegerField(help_text="Количество занятий")
+    time = models.IntegerField(help_text="Время одного занятия")
+    days = models.CharField(max_length=100, help_text="Дни недели когда будут проходить занятия (через запятую)")
+    firstdate = models.DateField(help_text="Дата первого занятия")
+    lastdate = models.DateField(help_text="Дата последнего занятия")
+    price = models.IntegerField(help_text="Стоимость курса")
+    info = models.TextField(help_text="Подробная информацая про курс")
     direction = models.ForeignKey("Direction", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
@@ -25,3 +25,16 @@ class Course(models.Model):
     def get_absolute_url(self):
         return reverse('course_detail', args=[str(self.id)])
 
+class Person(models.Model):
+    course = models.ForeignKey("Course", on_delete=models.SET_NULL, null=True)
+    name = models.CharField(max_length=20, help_text="Имя")
+    surname = models.CharField(max_length=30, help_text="Фамилия")
+    fathername = models.CharField(max_length=30, help_text="Отчество")
+    email = models.EmailField(help_text="Электронная почта")
+    phone = models.CharField(max_length=12, help_text="Номер телефона")
+    comment = models.TextField(null=True, help_text="Комментарий", blank=True)
+    pay = models.BooleanField(default=False, help_text="Есть ли оплата")
+    dateofpay = models.DateField(null=True, help_text="Дата оплаты")
+
+    def __str__(self):
+        return self.surname

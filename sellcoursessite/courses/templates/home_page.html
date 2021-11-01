@@ -8,7 +8,7 @@
     <div class="page">
         <div class="info">
             <a href="/courses/">Домашнаяя страница</a>
-            <a href="/admin/">Администратор</a>
+            <a href="/courses/admin/">Администратор</a>
         </div>
         <div class="search">
             <form>
@@ -38,7 +38,7 @@
                 {% for course in course_list %}
                 <li>
                     <p>{{ course.name }}, Кол-во занятий: {{course.num}}, с {{course.firstdate}} по {{course.lastdate}}</p>
-                    <form>
+                    <form action="/courses/record/">
                         <button>Записаться</button>
                     </form>
                     <form action="{{ course.get_absolute_url}}">

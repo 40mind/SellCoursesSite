@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61087043-861c-41b7-816c-f2e6881f81c3" name="Changes" comment="Added models">
+    <list default="true" id="61087043-861c-41b7-816c-f2e6881f81c3" name="Changes" comment="Added home page and page with information about course">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellcoursessite/courses/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/courses/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellcoursessite/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/courses/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellcoursessite/courses/templates/course_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/courses/templates/course_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellcoursessite/courses/templates/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/courses/templates/home_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellcoursessite/courses/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/courses/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellcoursessite/courses/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/courses/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellcoursessite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellcoursessite/sellcoursessite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/sellcoursessite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellcoursessite/sellcoursessite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sellcoursessite/sellcoursessite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -64,6 +66,8 @@
       <workItem from="1634918258718" duration="2560000" />
       <workItem from="1634922608459" duration="2784000" />
       <workItem from="1635081646183" duration="8173000" />
+      <workItem from="1635179285004" duration="4136000" />
+      <workItem from="1635782653645" duration="3898000" />
     </task>
     <task id="LOCAL-00001" summary="Create a project">
       <created>1634831225474</created>
@@ -79,7 +83,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634833571376</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added home page and page with information about course">
+      <created>1635179337365</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635179337365</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added home page and page with information about course">
+      <created>1635179392963</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635179392963</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create a project" />
     <MESSAGE value="Added models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added models" />
+    <MESSAGE value="Added home page and page with information about course" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added home page and page with information about course" />
   </component>
 </project>
