@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание курса</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="record">
+            <form action="" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr><td>Название</td> <td>{{ form.name }}</td></tr>
+                    <tr><td>Направление</td> <td>{{ form.direction }}</td></tr>
+                    <tr><td>Количество занятий</td> <td>{{ form.num }}</td></tr>
+                    <tr><td>Время одного занятия (минут)</td> <td>{{ form.time }}</td></tr>
+                    <tr><td>Дни недели (через запятую)</td> <td>{{ form.days }}</td></tr>
+                    <tr><td>Дата первого занятия(в формате 31.12.2021)</td> <td>{{ form.firstdate }}</td></tr>
+                    <tr><td>Дата последнего занятия(в формате 31.12.2021)</td> <td>{{ form.lastdate }}</td></tr>
+                    <tr><td>Стоимость</td> <td>{{ form.price }}</td></tr>
+                    <tr><td>Информация</td> <td>{{ form.info }}</td></tr>
+                </table>
+                <input type="submit" value="Создать" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

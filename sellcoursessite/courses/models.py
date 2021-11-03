@@ -1,12 +1,18 @@
 from django.db import models
 from django.urls import reverse
-
 # Create your models here.
+
 class Direction(models.Model):
     name = models.CharField(max_length=30, help_text="Название направления")
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url_update(self):
+        return reverse('admin_direction_update', args=[str(self.id)])
+
+    def get_absolute_url_delete(self):
+        return reverse('admin_direction_delete', args=[str(self.id)])
 
 class Course(models.Model):
     name = models.CharField(max_length=30, help_text="Название курса")
@@ -25,6 +31,15 @@ class Course(models.Model):
     def get_absolute_url(self):
         return reverse('course_detail', args=[str(self.id)])
 
+    def get_absolute_url_admin(self):
+        return reverse('admin_course_detail', args=[str(self.id)])
+
+    def get_absolute_url_update(self):
+        return reverse('admin_course_update', args=[str(self.id)])
+
+    def get_absolute_url_delete(self):
+        return reverse('admin_course_delete', args=[str(self.id)])
+
 class Person(models.Model):
     course = models.ForeignKey("Course", on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=20, help_text="Имя")
@@ -34,7 +49,16 @@ class Person(models.Model):
     phone = models.CharField(max_length=12, help_text="Номер телефона")
     comment = models.TextField(null=True, help_text="Комментарий", blank=True)
     pay = models.BooleanField(default=False, help_text="Есть ли оплата")
-    dateofpay = models.DateField(null=True, help_text="Дата оплаты")
+    dateofpay = models.DateField(null=True, help_text="Дата оплаты", blank=True)
 
     def __str__(self):
         return self.surname
+
+    def get_absolute_url_admin(self):
+        return reverse('admin_person_detail', args=[str(self.id)])
+
+    def get_absolute_url_update(self):
+        return reverse('admin_person_update', args=[str(self.id)])
+
+    def get_absolute_url_delete(self):
+        return reverse('admin_person_delete', args=[str(self.id)])

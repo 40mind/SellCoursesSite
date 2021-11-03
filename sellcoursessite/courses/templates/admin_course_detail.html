@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="title">
+            <h3>{{ course.name }}</h3>
+        </div>
+        <div class="info">
+            <p>Направление: {{ course.direction }}</p>
+            <p>Число занятий: {{ course.num }}</p>
+            <p>Время одного занятия: {{ course.time }} минут</p>
+            <p>Дни проведения занятий: {{ course.days }}</p>
+            <p>Даты проведения занятий: с {{ course.firstdate }} по {{ course.lastdate }}</p>
+            <p>Стоимость курса: {{ course.price }} рублей</p>
+            <p>Информация: {{ course.info }}</p>
+            <form action="{{ course.get_absolute_url_update }}">
+                <button>Изменить</button>
+            </form>
+            <form action="{{ course.get_absolute_url_delete }}">
+                <button>Удалить</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

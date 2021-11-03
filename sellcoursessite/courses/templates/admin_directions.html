@@ -15,11 +15,20 @@
             <ol>
                 {% for direction in direction_list %}
                 <li>{{ direction.name }}</li>
+                <form action="{{ direction.get_absolute_url_update }}">
+                    <button>Изменить</button>
+                </form>
+                <form action="{{ direction.get_absolute_url_delete }}">
+                    <button>Удалить</button>
+                </form>
                 {% endfor %}
             </ol>
             {% else %}
             <p>Нет записей о направлениях</p>
             {% endif %}
+            <form action="/courses/admin/directions/create/">
+                <button>Добавить</button>
+            </form>
         </div>
     </div>
 </body>

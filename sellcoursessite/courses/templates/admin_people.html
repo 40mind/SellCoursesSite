@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Панель администратора</title>
+    <title>Пользователи</title>
 </head>
 <body>
     <div class="page">
@@ -15,18 +15,12 @@
             <ol>
                 {% for person in people_list %}
                 <li>
-                    <p>{{person.surname}} {{person.name}} {{person.fathername}}, курс: {{person.course}},
-                        Email: {{person.email}}, Телефон: {{person.phone}}, есть ли оплата: {{person.pay}}
-                    {% if person.pay %}}
-                    , Дата оплаты: {{ person.dateofpay}}
-                    {% endif %}
-                    {% if person.comment %}
-                    , Комментарий: {{person.comment}}
-                    {% endif %}</p>
-                    <form action="">
+                    <p><a href="{{ person.get_absolute_url_admin }}">{{person.surname}} {{person.name}} {{person.fathername}}</a>
+                        , курс: {{person.course}}, Email: {{person.email}}, Телефон: {{person.phone}}</p>
+                    <form action="{{ person.get_absolute_url_update }}">
                         <button>Изменить</button>
                     </form>
-                    <form action="">
+                    <form action="{{ person.get_absolute_url_delete }}">
                         <button>Удалить</button>
                     </form>
                 </li>
@@ -35,6 +29,9 @@
             {% else %}
                 <p>Нет записей о пользователях</p>
             {% endif %}
+            <form action="/courses/admin/people/create/">
+                <button>Добавить</button>
+            </form>
         </div>
     </div>
 </body>

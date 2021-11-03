@@ -11,9 +11,18 @@
             <a href="/courses/admin/">Администратор</a>
         </div>
         <div class="menu">
-            <p><a href="/courses/admin/directions/">Направления</a></p>
-            <p><a href="/courses/admin/courses/">Курсы</a></p>
-            <p><a href="/courses/admin/people/">Пользователи</a></p>
+            <form action="/courses/admin/directions/create/">
+                <p><a href="/courses/admin/directions/">Направления</a>
+                <button>Добавить</button></p>
+            </form>
+            <form action="/courses/admin/courses/create/">
+                <p><a href="/courses/admin/courses/">Курсы</a>
+                <button>Добавить</button></p>
+            </form>
+            <form action="/courses/">
+                <p><a href="/courses/admin/people/">Пользователи</a>
+                <button>Добавить</button></p>
+            </form>
         </div>
     </div>
 </body>

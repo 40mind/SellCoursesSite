@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подтверждение удаления</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="confirm">
+            <p>Вы действительно хотите удалить пользователя: {{ person }}?</p>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Удалить" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

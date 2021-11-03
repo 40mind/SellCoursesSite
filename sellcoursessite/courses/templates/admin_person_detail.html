@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="title">
+            <h3>{{person.surname}} {{ person.name }} {{person.fathername}}</h3>
+        </div>
+        <div class="info">
+            <p>Курс: {{ person.course }}</p>
+            <p>Email: {{ person.email }}</p>
+            <p>Телефон: {{ person.phone }}</p>
+            {% if person.pay %}
+            <p>Оплата: Да</p>
+            <p>Дата оплаты: {{ person.dateofpay }}</p>
+            {% else %}
+            <p>Оплата: Нет</p>
+            {% endif %}
+            {% if person.comment %}
+            <p>Комментарий: {{person.comment}}</p>
+            {% endif %}
+            <form action="{{ person.get_absolute_url_update }}">
+                <button>Изменить</button>
+            </form>
+            <form action="{{ person.get_absolute_url_delete }}">
+                <button>Удалить</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
