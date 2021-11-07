@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выход</title>
+</head>
+<body>
+    <div class="page">
+        <div class="info">
+            <a href="/courses/">Домашнаяя страница</a>
+            <a href="/courses/admin/">Администратор</a>
+        </div>
+        <div class="log_out">
+            <p>Вы вышли из системы.</p>
+            <a href="{% url 'login' %}">Войти заново.</a>
+        </div>
+    </div>
+</body>
+</html>

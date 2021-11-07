@@ -9,6 +9,12 @@
         <div class="info">
             <a href="/courses/">Домашнаяя страница</a>
             <a href="/courses/admin/">Администратор</a>
+            {% if user.is_authenticated %}
+                <span>Пользователь: {{ user.get_username }}</span>
+                <a href="{% url 'logout'%}">Выйти</a>
+            {% else %}
+                <a href="{% url 'login'%}">Войти</a>
+            {% endif %}
         </div>
         <div class="search">
             <form>

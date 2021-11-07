@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\maxim\Documents\GitHub\SellCoursesSite\sellcoursessite\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="db [2]" uuid="37403c62-b6a2-41ca-9bbb-c9af85b3be4a">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\maxim\Documents\GitHub\SellCoursesSite\db.sqlite3</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

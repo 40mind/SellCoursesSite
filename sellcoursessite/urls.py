@@ -19,7 +19,8 @@ from django.urls import include
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('djangoadmin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('courses/', include('courses.urls')),
     path('', RedirectView.as_view(url='/courses/', permanent=True)),
 ]
